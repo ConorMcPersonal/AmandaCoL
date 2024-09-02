@@ -14,7 +14,7 @@
             const divElement = document.getElementById('imagebg');
             divElement.style.backgroundImage = `url('${imageUrl}')`;
             let nextIdx = (arrIdx + 1) % imgArray.length;
-            imageUrl = imgArray[arrIdx];
+            imageUrl = imgArray[nextIdx];
             let nextImg = new Image();
             nextImg.src = imageUrl;
         }
