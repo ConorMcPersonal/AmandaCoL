@@ -13,6 +13,10 @@
             let imageUrl = imgArray[arrIdx];
             const divElement = document.getElementById('imagebg');
             divElement.style.backgroundImage = `url('${imageUrl}')`;
+            let nextIdx = (arrIdx + 1) % imgArray.length;
+            imageUrl = imgArray[arrIdx];
+            let nextImg = new Image();
+            nextImg.src = imageUrl;
         }
         function nextImgTO() {
             nextImg();
