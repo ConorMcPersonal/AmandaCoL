@@ -2,13 +2,21 @@
 <html>
 <head>
     <script>
-        let imgArray = ['Static1.jpg', 'Static2.jpg', 'images/guardian.png', 'Entrance.jpg'
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        let imgArray = shuffleArray(
+            ['Static1.jpg', 'Static2.jpg', 'images/guardian.png', 'Entrance.jpg'
             , 'images/MandAndDonald.jpg', 'images/MandAndIsaac.jpg', 'images/MandAndLila.jpg', 'images/MandBW.jpg',  'images/MandInTheWoods.jpg'
             , 'images/MandInTheWoods2.jpg', 'images/AmandaAndCow.jpg', 'images/Beach.jpg'
             , 'images/AmandaAndCow.jpg', 'images/Beach.jpg', 'images/Christening.jpg'
             , 'images/Christening2.jpg', 'images/Families.jpg', 'images/IceBar1.jpg', 'images/Runners.jpg', 'images/Runners2.jpg'
             , 'images/Snowboard.jpg', 'images/AdeAndMand.jpg'
-        ];
+        ]);
         let arrIdx = 0;
 
         function nextImg() {
