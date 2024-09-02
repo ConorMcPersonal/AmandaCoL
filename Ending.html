@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        let imgArray = ['Static1.jpg', 'Static2.jpg', 'images/guardian.png', 'Entrance.jpg'];
+        let arrIdx = 0;
+
+        function nextImg() {
+            arrIdx = (arrIdx + 1) % imgArray.length;
+            let imageUrl = imgArray[arrIdx];
+            const divElement = document.getElementById('imagebg');
+            divElement.style.backgroundImage = `url('${imageUrl}')`;
+        }
+        function nextImgTO() {
+            nextImg();
+            setTimeout(nextImgTO, 10000);
+        }
+    </script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("Static1.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  /*background-size: cover;*/
+  background-size: contain;
+}
+</style>
+</head>
+<body>
+
+<div class="bg" id="imagebg"><a href="Static3.html"><img src="back.png" height="30px" width="30px"/></a><br/>
+    <iframe style="border-radius:12px" 
+        src="https://open.spotify.com/embed/playlist/2Bnzpd8wHdHP9xyMYj3Bik?utm_source=generator" 
+        width="300" height="200" frameBorder="0" 
+        allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+    </iframe>
+</div>
+<script>
+    nextImgTO();
+</script>
+</body>
+</html>
